@@ -106,6 +106,7 @@ body {
   .nav__link {
     font-size: 12px;
     line-height: 14px;
+    font-weight: 700;
   }
 }
 @media screen and (max-width: 767px) {
@@ -222,21 +223,6 @@ body {
     padding: 53px 0;
   }
 }
-.install__container {
-  max-width: 1215px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-@media screen and (max-width: 1024px) {
-  .install__container {
-    max-width: 984px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .install__container {
-    max-width: 280px;
-  }
-}
 .install__title {
   color: rgb(0, 0, 0);
   margin-bottom: 22px;
@@ -317,9 +303,6 @@ body {
   }
 }
 .features__container {
-  max-width: 1210px;
-  margin: 0 auto;
-  padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   -moz-column-gap: 31px;
@@ -328,7 +311,6 @@ body {
 }
 @media screen and (max-width: 1024px) {
   .features__container {
-    max-width: 984px;
     -moz-column-gap: 20px;
          column-gap: 20px;
     row-gap: 49px;
@@ -336,12 +318,8 @@ body {
 }
 @media screen and (max-width: 767px) {
   .features__container {
-    max-width: 281px;
     grid-template-columns: repeat(1, 1fr);
   }
-}
-.features__item {
-  align-items: center;
 }
 .features__wrapper-icon {
   display: inline-block;
@@ -362,6 +340,10 @@ body {
     height: 75px;
     margin-bottom: 37px;
   }
+}
+.features > svg {
+  width: 100%;
+  height: 100%;
 }
 .features__name {
   color: rgb(45, 48, 51);
