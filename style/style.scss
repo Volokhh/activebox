@@ -8,12 +8,14 @@ $font: "Raleway", sans-serif;
 $btn_bg: rgba(255, 67, 67, 1);
 $border-color: rgba(186, 187, 197, 1);
 $border-color-products: rgba(255, 255, 255, 1);
+$border-pagination-color: rgba(126, 93, 111, 1);
 $border-footer-link: rgba(198, 203, 205, 1);
 $bg-color-banner: rgba(37, 43, 73, 0.8);
 $bg-primary-color: rgba(255, 255, 255, 1);
 $bg-content-product: rgba(255, 67, 67, 0.8);
 $bg-color-footer: rgba(53, 60, 101, 1);
 $bg-color-footer-copyright: rgba(44, 49, 84, 1);
+$bg-color-slider: rgba(92, 50, 73, 1);
 $tablet: 1024px;
 $mobile: 767px;
 
@@ -238,6 +240,59 @@ body {
 
    }
    }
+
+.recommendation{
+   background-color: $bg-primary-color;
+   margin-bottom: 31px;
+   width: 100%;
+
+&__slide {
+   display: grid;
+   grid-template-columns: repeat(2, 570px);
+   column-gap: 31px;
+   background-color: $bg-color-slider;
+   align-items: center;
+}
+
+   &__image {
+      width: 100%;
+      object-fit: contain;
+      aspect-ratio: 570px/490px;
+   }
+
+   &__text {
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 49px !important;
+      font-family: "Cardo", serif;
+      font-style: italic;
+      color: $text-color;
+   }
+
+   &__author {
+      @include font(13px, 15px, 700);
+      color: $text-color;
+      padding: 6px 0
+   }
+}
+
+.swiper-pagination {
+      position: static;
+      @extend %flex;
+      column-gap: 25px;
+      margin-top: 31px;  
+}
+
+.swiper-pagination-bullet {
+   border: 1px solid $border-paginaton-color;
+   background-color: transparent;    
+   width: 14px;
+   height: 14px;
+}
+
+.swiper-pagination-bullet-active {
+   background-color: $border-pagination-color;    
+}
 
 
 .install {

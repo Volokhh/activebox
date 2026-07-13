@@ -8,7 +8,11 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
    <link rel="stylesheet" href="css/style.css">
    <title>ACTIVEBOX</title>
 </head>
@@ -399,6 +403,65 @@
       </div>
    </div>
 
+   <div class="recommendation-wrapper">
+      
+      <div class="recommendation">
+         <div class="container recommendation__container">
+            <div class="swiper myRecommendationSwiper">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide recommendation__slide">
+                     <img class="recommendation__image" src="media/bg.png" alt="">
+                     <div class="recommendation__content">
+                        <h3 class="recommendation__text">“Integer posuere erat a ante venenatis dapibus posuere velit
+                           aliquet.
+                           Donec sed odio dui. Aenean eu leo quam...”</h3>
+                        <p class="recommendation__author">Susan Sims, Interaction Designer at XYZ</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide recommendation__slide">
+                     <img class="recommendation__image" src="media/bg.png" alt="">
+                     <div class="recommendation__content">
+                        <h3 class="recommendation__text">“Integer posuere erat a ante venenatis dapibus posuere velit
+                           aliquet.
+                           Donec sed odio dui. Aenean eu leo quam...”</h3>
+                        <p class="recommendation__author">Susan Sims, Interaction Designer at XYZ</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide recommendation__slide">
+                     <img class="recommendation__image" src="media/bg.png" alt="">
+                     <div class="recommendation__content">
+                        <h3 class="recommendation__text">“Integer posuere erat a ante venenatis dapibus posuere velit
+                           aliquet.
+                           Donec sed odio dui. Aenean eu leo quam...”</h3>
+                        <p class="recommendation__author">Susan Sims, Interaction Designer at XYZ</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide recommendation__slide">
+                     <img class="recommendation__image" src="media/bg.png" alt="">
+                     <div class="recommendation__content">
+                        <h3 class="recommendation__text">“Integer posuere erat a ante venenatis dapibus posuere velit
+                           aliquet.
+                           Donec sed odio dui. Aenean eu leo quam...”</h3>
+                        <p class="recommendation__author">Susan Sims, Interaction Designer at XYZ</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide recommendation__slide">
+                     <img class="recommendation__image" src="media/bg.png" alt="">
+                     <div class="recommendation__content">
+                        <h3 class="recommendation__text">“Integer posuere erat a ante venenatis dapibus posuere velit
+                           aliquet.
+                           Donec sed odio dui. Aenean eu leo quam...”</h3>
+                        <p class="recommendation__author">Susan Sims, Interaction Designer at XYZ</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="swiper-pagination recommendation__pagination"></div>
+   </div>
+
    <section class="install">
       <div class="container install__container">
          <h2 class="install__title">Are You Ready to Start? Download Now For Free!</h2>
@@ -459,7 +522,16 @@
       </div>
    </footer>
 
-   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+   <script>
+      var swiper = new Swiper('.myRecommendationSwiper', {
+         spaceBetween: 30,
+         pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+         },
+      });
+   </script>
 </body>
 
 </html>
