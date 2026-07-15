@@ -11,7 +11,7 @@
   line-height: 28px;
 }
 
-.footer__link, .footer__links-wrapper, .aboutus__link, .product__content, .recommendation__pagination {
+.footer__link, .footer__links-wrapper, .about-us__link, .product__content, .swiper-pagination {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +63,7 @@ body {
 @media screen and (max-width: 767px) {
   .header__toggle {
     display: block;
+    cursor: pointer;
   }
 }
 .header__logo-wrapper {
@@ -207,7 +208,7 @@ body {
 }
 .banner__btn {
   transform: scale(1);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s linear, color 0.3 linear;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s linear, color 0.3s linear;
 }
 .banner__btn:hover {
   transform: scale(1.05);
@@ -226,26 +227,78 @@ body {
 }
 
 .recommendation {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(92, 50, 73);
+  margin-bottom: 31px;
+  width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .recommendation {
+    margin-bottom: 23px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .recommendation {
+    padding-bottom: 95px;
+  }
 }
 .recommendation__slide {
   display: grid;
-  grid-template-columns: repeat(2, 570px);
+  grid-template-columns: repeat(2, 1fr);
   -moz-column-gap: 31px;
        column-gap: 31px;
-  background-color: rgb(92, 50, 73);
   align-items: center;
 }
+@media screen and (max-width: 1024px) {
+  .recommendation__slide {
+    -moz-column-gap: 19px;
+         column-gap: 19px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .recommendation__slide {
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+}
 .recommendation__image {
-  aspect-ratio: 570px/490px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 570/490;
+}
+@media screen and (max-width: 1024px) {
+  .recommendation__image {
+    aspect-ratio: 482/332;
+  }
+}
+@media screen and (max-width: 767px) {
+  .recommendation__image {
+    aspect-ratio: 280/218;
+  }
+}
+.recommendation__content {
+  text-align: center;
 }
 .recommendation__text {
   font-size: 36px;
   font-weight: 400;
-  line-height: 49px !important;
+  line-height: 49px;
   font-family: "Cardo", serif;
   font-style: italic;
   color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 1024px) {
+  .recommendation__text {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 767px) {
+  .recommendation__text {
+    margin-bottom: 15px;
+    text-transform: capitalize;
+  }
 }
 .recommendation__author {
   font-size: 13px;
@@ -254,9 +307,21 @@ body {
   color: rgb(255, 255, 255);
   padding: 6px 0;
 }
-.recommendation__pagination {
+@media screen and (max-width: 1024px) {
+  .recommendation__author {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+  }
+}
+@media screen and (max-width: 767px) {
+  .recommendation__author {
+    text-transform: uppercase;
+  }
+}
+
+.swiper-pagination {
   position: static;
-  smargin-top: 157px;
   -moz-column-gap: 25px;
        column-gap: 25px;
 }
@@ -266,6 +331,12 @@ body {
   background-color: transparent;
   width: 14px;
   height: 14px;
+}
+@media screen and (max-width: 1024px) {
+  .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+  }
 }
 
 .swiper-pagination-bullet-active {
@@ -479,6 +550,7 @@ body {
   background-color: rgba(255, 67, 67, 0.8);
   padding: 10px;
   flex-direction: column;
+  transition: opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
   opacity: 0;
 }
 .product__content:hover {
@@ -519,59 +591,61 @@ body {
   }
 }
 
-.aboutus {
+.about-us {
   padding: 100px 0;
   background-color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 1024px) {
-  .aboutus {
+  .about-us {
     padding: 80px 0;
   }
 }
 @media screen and (max-width: 767px) {
-  .aboutus {
+  .about-us {
     padding: 49px 0 56px;
   }
 }
-.aboutus__container {
+.about-us__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
 @media screen and (max-width: 1024px) {
-  .aboutus__container {
+  .about-us__container {
     -moz-column-gap: 24px;
          column-gap: 24px;
   }
 }
 @media screen and (max-width: 767px) {
-  .aboutus__container {
+  .about-us__container {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 56px;
   }
 }
-.aboutus__image-wrapper {
+.about-us__image-wrapper {
   display: inline-block;
   width: 270px;
   height: 270px;
+  aspect-ratio: 1/1;
   margin-bottom: 31px;
 }
 @media screen and (max-width: 1024px) {
-  .aboutus__image-wrapper {
+  .about-us__image-wrapper {
+    margin-bottom: 25px;
     width: 227px;
     height: 227px;
-    margin-bottom: 25px;
+    aspect-ratio: 1/1;
   }
 }
 @media screen and (max-width: 767px) {
-  .aboutus__image-wrapper {
+  .about-us__image-wrapper {
     width: 280px;
     height: 227px;
+    aspect-ratio: 280/227;
   }
 }
-.aboutus__img {
-  aspect-ratio: 1/1;
+.about-us__img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -579,12 +653,7 @@ body {
   -o-object-position: top;
      object-position: top;
 }
-@media screen and (max-width: 767px) {
-  .aboutus__img {
-    aspect-ratio: 280/227;
-  }
-}
-.aboutus__name {
+.about-us__name {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
@@ -592,14 +661,14 @@ body {
   margin-bottom: 6px;
 }
 @media screen and (max-width: 1024px) {
-  .aboutus__name {
+  .about-us__name {
     font-size: 18px;
     line-height: 21px;
     font-weight: 700;
     margin-bottom: 4px;
   }
 }
-.aboutus__position {
+.about-us__position {
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
@@ -608,7 +677,7 @@ body {
   margin-bottom: 17px;
 }
 @media screen and (max-width: 1024px) {
-  .aboutus__position {
+  .about-us__position {
     font-size: 14px;
     line-height: 16px;
     font-weight: 400;
@@ -616,11 +685,11 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
-  .aboutus__position {
+  .about-us__position {
     margin-bottom: 38px;
   }
 }
-.aboutus__description {
+.about-us__description {
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
@@ -628,7 +697,7 @@ body {
   margin-bottom: 37px;
 }
 @media screen and (max-width: 1024px) {
-  .aboutus__description {
+  .about-us__description {
     font-size: 14px;
     line-height: 16px;
     font-weight: 400;
@@ -636,54 +705,53 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
-  .aboutus__description {
+  .about-us__description {
     margin-bottom: 55px;
   }
 }
-.aboutus__links {
+.about-us__links {
   display: flex;
   -moz-column-gap: 6px;
        column-gap: 6px;
 }
 @media screen and (max-width: 1024px) {
-  .aboutus__links {
+  .about-us__links {
     -moz-column-gap: 5px;
          column-gap: 5px;
   }
 }
 @media screen and (max-width: 767px) {
-  .aboutus__links {
+  .about-us__links {
     -moz-column-gap: 6px;
          column-gap: 6px;
   }
 }
-.aboutus__link {
+.about-us__link {
   width: 39px;
   height: 39px;
-  padding: 10px 0;
   border: 1px solid rgb(198, 203, 205);
   transform: scale(1);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border 0.3s linear, fill 0.3s linear;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border 0.3s linear;
 }
-.aboutus__link:hover {
+.about-us__link:hover {
   border-color: rgba(255, 67, 67, 0.8);
   transform: scale(1.05);
 }
-.aboutus__link path {
-  transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+.about-us__link path {
+  transition: fill 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.aboutus__link:hover path {
+.about-us__link:hover path {
   fill: rgba(255, 67, 67, 0.8);
 }
 @media screen and (max-width: 1024px) {
-  .aboutus__link {
+  .about-us__link {
     width: 32px;
     height: 32px;
     padding: 8px 0 9px;
   }
 }
 @media screen and (max-width: 767px) {
-  .aboutus__link {
+  .about-us__link {
     width: 39px;
     height: 39px;
     padding: 10px 0 11px;

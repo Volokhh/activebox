@@ -88,7 +88,9 @@ body {
    display: none;
    @media screen and (max-width: $mobile) {
    display: block;
+   cursor: pointer;
    }
+
    }
 
    &__logo-wrapper {
@@ -221,7 +223,7 @@ body {
 
    &__btn {
    transform: scale(1);
-   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s linear, color 0.3 linear;
+   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s linear, color 0.3s linear;
    @extend %button;
 
    &:hover {
@@ -242,37 +244,81 @@ body {
    }
 
 .recommendation{
-   background-color: $bg-primary-color;
+   background-color: $bg-color-slider;
    margin-bottom: 31px;
    width: 100%;
 
+   @media screen and (max-width: $tablet) {
+   margin-bottom: 23px;   
+   }
+
+   @media screen and (max-width: $mobile) {
+   padding-bottom: 95px;
+   }
+
 &__slide {
    display: grid;
-   grid-template-columns: repeat(2, 570px);
+   grid-template-columns: repeat(2, 1fr);
    column-gap: 31px;
-   background-color: $bg-color-slider;
    align-items: center;
+
+   @media screen and (max-width: $tablet) {
+   column-gap: 19px;
+   }  
+
+   @media screen and (max-width: $mobile) {
+   grid-template-columns: 1fr;
+   row-gap: 25px;  
+   }
 }
 
    &__image {
       width: 100%;
-      object-fit: contain;
-      aspect-ratio: 570px/490px;
+      object-fit: cover;
+      aspect-ratio: 570/490;
+
+      @media screen and (max-width: $tablet) {
+      aspect-ratio: 482/332;
+      }
+
+   @media screen and (max-width: $mobile) {
+      aspect-ratio: 280/218;
+   }
+   }
+
+   &__content {
+      text-align: center;
    }
 
    &__text {
       font-size: 36px;
       font-weight: 400;
-      line-height: 49px !important;
+      line-height: 49px;
       font-family: "Cardo", serif;
       font-style: italic;
       color: $text-color;
+
+      @media screen and (max-width: $tablet) {
+      @include font(24px, 32px, 400);
+      }
+
+      @media screen and (max-width: $mobile) {
+      margin-bottom: 15px;
+      text-transform: capitalize;
+      }
    }
 
    &__author {
       @include font(13px, 15px, 700);
       color: $text-color;
-      padding: 6px 0
+      padding: 6px 0;
+
+      @media screen and (max-width: $tablet) {
+      @include font(12px, 14px, 700);
+      }
+      @media screen and (max-width: $mobile) {
+      text-transform: uppercase;
+      }
    }
 }
 
@@ -280,18 +326,22 @@ body {
       position: static;
       @extend %flex;
       column-gap: 25px;
-      margin-top: 31px;  
 }
 
 .swiper-pagination-bullet {
-   border: 1px solid $border-paginaton-color;
+   border: 1px solid rgba(126, 93, 111, 1);
    background-color: transparent;    
    width: 14px;
    height: 14px;
+
+   @media screen and (max-width: $tablet) {
+   width: 9px;
+   height: 9px;
+   } 
 }
 
 .swiper-pagination-bullet-active {
-   background-color: $border-pagination-color;    
+   background-color: rgba(126, 93, 111, 1);    
 }
 
 
@@ -481,7 +531,7 @@ body {
       padding: 10px;
       @extend %flex;
       flex-direction: column;
-
+      transition: opacity 1s  cubic-bezier(0.34, 1.56, 0.64, 1);
       opacity: 0;
 
       &:hover {
@@ -515,7 +565,7 @@ body {
    }
 }
 
-.aboutus {
+.about-us {
    padding: 100px 0;
    background-color: $bg-primary-color;
 
@@ -544,29 +594,27 @@ body {
       display: inline-block;
       width: 270px;
       height: 270px;
+      aspect-ratio: 1/1;
       margin-bottom: 31px;
 
    @media screen and (max-width: $tablet) {
-      width: 227px;
-      height: 227px; 
       margin-bottom: 25px;
+      width: 227px;
+      height: 227px;
+      aspect-ratio: 1/1;
       }
    @media screen and (max-width: $mobile) {
       width: 280px;
       height: 227px;
+      aspect-ratio: 280/227;
    }
    }
 
    &__img {
-      aspect-ratio: 1/1;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top;
-
-   @media screen and (max-width: $mobile) {
-      aspect-ratio: 280/227;
-   }
    }
 
    &__name {
@@ -625,18 +673,17 @@ body {
    &__link {
       width: 39px;
       height: 39px;
-      padding: 10px 0;
       border: 1px solid rgba(198, 203, 205, 1);
       @extend %flex;
       transform: scale(1);
-      transition: transform 0.3s  cubic-bezier(0.34, 1.56, 0.64, 1), border 0.3s linear, fill 0.3s linear;
+      transition: transform 0.3s  cubic-bezier(0.34, 1.56, 0.64, 1), border 0.3s linear;
 
       &:hover{
          border-color: $bg-content-product;
          transform: scale(1.05);
       }
       path {
-      transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); 
+      transition: fill 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); 
       }
 
       &:hover {
